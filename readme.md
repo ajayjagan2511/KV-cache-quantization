@@ -52,10 +52,10 @@ The fused Triton kernel eliminates the $O(N^2)$ materialisation entirely, achiev
 
 | Sequence Length | PyTorch Native (MB) | Pure Triton FA V2 (MB) | Fused INT8 Flash (FX) (MB) |
 | :--- | :--- | :--- | :--- |
-| **4k** | 25.16 | — | **21.16** |
-| **8k** | 39.16 | — | **31.16** |
-| **16k** | 67.16 | — | **51.16** |
-| **32k** | 123.16 | — | **91.16** |
+| **4k** | 25.16 | 25.28 | **21.16** |
+| **8k** | 39.16 | 39.41 | **31.16** |
+| **16k** | 67.16 | 67.66 | **51.16** |
+| **32k** | 123.16 | 124.16 | **91.16** |
 
 **Observation:** At 32,768 tokens, the Fused INT8 Flash architecture reduces peak HBM to **91.16 MB** — a **~26% reduction** versus PyTorch Native SDPA (123.16 MB).
 
